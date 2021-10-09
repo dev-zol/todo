@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+var name = "Fuck NPM, Yarn works so... Yarn FTW!";
+
 app.use(express.json());
 
 app.get("/send", (req, res) => {
@@ -13,7 +15,8 @@ app.get("/send", (req, res) => {
 });
 
 app.post("/send", (req, res) => {
-    var name = req.body.name;
+    name = req.body.name;
+
     console.log("Uhm I guess a name will show up here? ", name);
 });
     
