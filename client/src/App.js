@@ -2,7 +2,6 @@
 
 import React from "react";
 import "./style/skeleton.css";
-<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"></link>
 
 function App() {
   const [data, setData] = React.useState(null);
