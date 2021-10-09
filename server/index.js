@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/send", (req, res) => {
     res.json({ message: "Fuck NPM, Yarn works so... Yarn FTW!" });
 });
