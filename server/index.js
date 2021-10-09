@@ -6,11 +6,9 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.get("/api", (req, res) => {
+app.get("/send", (req, res) => {
     res.json({ message: "Fuck NPM, Yarn works so... Yarn FTW!" });
 });
-
-name = "";
 
 app.post("/send", (req, res) => {
     var name = req.body.name;

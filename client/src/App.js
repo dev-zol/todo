@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/api")
+    fetch("/send")
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
@@ -16,6 +16,7 @@ function App() {
   return (
     <div className="container">
       <TDList />
+      <div>{data}</div>
     </div>
   );
 }
