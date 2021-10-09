@@ -9,14 +9,14 @@ const TDList = () => {
       });
 
       const [result, setResult] = useState(null);
-      
+
       const sendData = event => {
         event.preventDefault();
         axios
          .post('/send', { ...state })
          .then(response => {
            setResult(response.data);
-           setState({ name: '', email: '', subject: '', message: '' });
+           setState({ name: '', task: ''});
          })
          .catch(() => {
            setResult({ success: false, message: 'Something went wrong. Try again later'});
