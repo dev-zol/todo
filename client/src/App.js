@@ -1,8 +1,8 @@
 // client/src/App.js
 
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "./styles/normalize.css"
+import "./styles/skeleton.css"
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -14,11 +14,22 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
+    <div className="container">
+      <div className="row">
+        <h1>To Do List</h1>
+        <form className="form">
+          <label>
+            Name: 
+            <input type="text" name="name" />
+          </label>
+          <label>
+            Task: 
+            <input type="text" name="task" />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <p>{data}</p>
+      </div>  
     </div>
   );
 }
