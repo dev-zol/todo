@@ -1,8 +1,8 @@
 // client/src/App.js
 
 import React from "react";
-import "./styles/normalize.css"
-import "./styles/skeleton.css"
+import "./style/skeleton.css";
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"></link>
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -17,19 +17,23 @@ function App() {
     <div className="container">
       <div className="row">
         <h1>To Do List</h1>
-        <form className="form">
-          <label>
-            Name: 
-            <input type="text" name="name" />
-          </label>
-          <label>
-            Task: 
-            <input type="text" name="task" />
-          </label>
-          <input onClick = {this.sendData} type="submit" value="Submit" />
-        </form>
-        <p>{data}</p>
-      </div>  
+      </div>
+      <form className="form">
+        <div className="row">
+          <div className="row">
+            <label for="name-input">Name</label>
+            <input className="half-width" type="text" name="name" /> 
+          </div>
+          <div className="row">
+            <label for="text-input">Task</label>
+            <input className="half-width" type="text" name="task" />
+          </div>
+          <div className="row">
+            <input className="button-primary" type="submit" value="Submit" />
+          </div>
+          <p>{data}</p>
+        </div> 
+      </form> 
     </div>
   );
 }
