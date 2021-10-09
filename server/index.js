@@ -12,7 +12,7 @@ app.get("/api", (req, res) => {
 
 name = "";
 
-app.post("/api/formdata", (req, res) => {
+app.post("/", (req, res) => {
     var name = req.body.name;
     console.log("Uhm I guess a name will show up here? ", name);
 });
