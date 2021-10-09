@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import "./style/skeleton.css";
 
 const TDList = () => {
@@ -6,10 +7,20 @@ const TDList = () => {
         name: '',
         task: ''
       });
-    const sendData = event => {
-        event.preventDefault();
 
-        console.log('We will fill this up shortly.');
+      const [result, setResult] = useState(null);
+      
+      const sendData = event => {
+        event.preventDefault();
+        axios
+         .post('/send', { ...state })
+         .then(response => {
+           setResult(response.data);
+           setState({ name: '', email: '', subject: '', message: '' });
+         })
+         .catch(() => {
+           setResult({ success: false, message: 'Something went wrong. Try again later'});
+       });
     };
 
     const onInputChange = event => {
