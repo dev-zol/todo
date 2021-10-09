@@ -3,24 +3,26 @@ import axios from 'axios';
 import "./style/skeleton.css";
 
 const TDList = () => {
+    
+
     const [state, setState] = useState({
         name: '',
         task: ''
       });
 
-      const [result, setResult] = useState(null);
+    const [result, setResult] = useState(null);
 
-      const sendData = event => {
+    const sendData = event => {
         event.preventDefault();
         axios
-         .post('/send', { ...state })
-         .then(response => {
-           setResult(response.data);
-           setState({ name: '', task: ''});
-         })
-         .catch(() => {
-           setResult({ success: false, message: 'Something went wrong. Try again later'});
-       });
+            .post('/send', { ...state })
+            .then(response => {
+            setResult(response.data);
+            setState({ name: '', task: ''});
+            })
+            .catch(() => {
+            setResult({ success: false, message: 'Something went wrong. Try again later'});
+            });
     };
 
     const onInputChange = event => {
