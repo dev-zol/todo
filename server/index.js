@@ -12,9 +12,12 @@ app.get("/api", (req, res) => {
 
 name = "";
 
+app.use(express.json())
+
 app.post("/", (req, res) => {
-    var name = req.body.name;
+    var name = req.body;
     console.log("Uhm I guess a name will show up here? ", name);
+    res.send(req.body)
 });
     
 app.listen(PORT, () => {
