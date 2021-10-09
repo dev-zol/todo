@@ -26,7 +26,7 @@ function App() {
             Task: 
             <input type="text" name="task" />
           </label>
-          <input type="submit" value="Submit" />
+          <input onClick = {this.sendData} type="submit" value="Submit" />
         </form>
         <p>{data}</p>
       </div>  
