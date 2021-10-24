@@ -15,7 +15,7 @@ const TDList = () => {
     const sendData = event => {
         event.preventDefault();
         axios
-            .post('/send', { ...state })
+            .post('http://localhost:3001/record/add', { ...state })
             .then(response => {
             setResult(response.data);
             setState({ name: '', task: ''});
