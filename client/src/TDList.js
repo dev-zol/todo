@@ -4,7 +4,6 @@ import "./style/skeleton.css";
 
 const TDList = () => {
     
-
     const [state, setState] = useState({
         name: '',
         task: ''
